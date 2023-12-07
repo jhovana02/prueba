@@ -1,0 +1,9 @@
+.contenedor {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .columna {
+    border-radius: 5px;
+    width: 50%;
+  }

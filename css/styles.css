@@ -1,0 +1,45 @@
+@import "colors.css";
+@import "common.css";
+@import "photos.css";
+@import "card.css";
+@import "header.css";
+@import "navbar.css";
+@import "aside.css";
+@import "content.css";
+@import "sidebar.css";
+@import "footer.css";
+
+/*@import "flipcard.css";*/
+
+@media screen and (max-width: 700px) {
+  .row, .navbar {
+    flex-direction: column;
+  }
+}
+.my-button {
+  width: 100px;
+  height: 50px;
+  background-color: var(--color-primary);
+  color: white;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  font-size: 15px;
+  font-family: sans-serif;
+  text-align: center;
+
+  &:hover {
+    background-color: rgb(64, 64, 64);
+  }
+}
+@media only screen and (max-width: 600px) {
+  .my-button {
+      font-size: 14px;
+  }
+}
+#contador {
+  font-size: 24px;
+  cursor: pointer;
+}
+#reloj {
+  font-size: 24px;
+}

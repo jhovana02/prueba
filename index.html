@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jhovana</title>
+    <link rel="icon" type="image/png" href="img/favicon.png" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <style>
+        #styleChangeButton {
+          font-size: 16px;
+          padding: 10px;
+          cursor: pointer;
+        }
+    
+        .styledElement {
+          width: 100px;
+          height: 100px;
+          background-color: lightblue;
+          margin-top: 20px;
+        }
+        #clickCounter {
+            font-size: 24px;
+            cursor: pointer;
+        }
+      </style>
+    <script>
+        function actualizarReloj() {
+          const relojElement = document.getElementById('reloj');
+          const fechaActual = new Date();
+          const hora = fechaActual.getHours();
+          const minutos = fechaActual.getMinutes();
+          const segundos = fechaActual.getSeconds();
+      
+          const horaFormateada = `${hora}:${minutos}:${segundos}`;
+      
+          relojElement.textContent = horaFormateada;
+        }
+      
+        // Actualizar el reloj cada segundo
+        setInterval(actualizarReloj, 1000);
+      
+        // Inicializar el reloj
+        actualizarReloj();
+    </script>
+    <script type="text/javascript">
+        
+        var btnElm = document.getElementById('btnClick'),
+            btnClear = document.getElementById('btnClear'),
+            pElm = document.getElementById('contarClick')
+            sect = document.getElementById('sect'),
+            contar = 0;
+        
+        const sbg = function(){
+            const randColor = Math.floor(Math.random() * 16777215).toString(16);
+            sect.style.backgroundColor = "#" + randColor;
+        }
+        
+        pElm.textContent = 0;
+        
+        btnElm.onclick = function(){
+            contar++;
+            pElm.textContent = contar;
+            sbg();
+        }
+        
+        btnClear.onclick = function(){
+            pElm.textContent = 0;
+            contar = 0;
+            sect.style.backgroundColor = "white";
+        }
+    </script>
+    
+  </head>
+
+  <body>
+    <!-- Header -->
+    <header>
+      <!-- Navegación -->
+      <nav class="navbar">
+        <a href="#">Inicio</a>
+        <a href="#">Recetas para el trabajo</a>
+        <a href="#">Recetas para llevar</a>
+        <a href="#">Recetas para programar</a>
+      </nav>
+      <div>
+        
+        <table>
+            <tr>
+              <th><img alt="" src="img/logo.png" height="150" /></th>
+              <th><h3>Cocinando con Jhovana</h3></th>
+              
+            </tr>
+           
+        </table>
+        <table align="center">
+            <tr>
+            <th><img src="img/carrito.png" width="30" height="30" alt=""></th>
+              <th><select id="colors" style="
+                
+                width: 100px;
+                height: 30px;
+                background-color: #ffffff;
+                color: black;
+                font-size: 16pt;
+              ">
+                <option value=""></option>
+                <option value="red">Red</option>
+                <option value="green">Green</option>
+                <option value="blue">Blue</option>
+              </select></th>
+              <th><input type="imagen" placeholder="Buscar..." src="img/buscar.png" style="
+                width: 200px;
+                height: 30px;
+                border: 1px solid black;
+                background-color: #ffffff;
+                color: #000000;
+                font-size: 16px;
+                font-family: sans-serif;">
+                </th>
+              
+            </tr>
+           
+        </table>
+          
+        
+        
+        <button class="my-button">
+            <span>Proteinas</span>
+        </button>
+        <button class="my-button">
+            <span>Fibras</span>
+        </button>
+        <button class="my-button">
+            <span>Grasas</span>
+        </button>
+        <button class="my-button">
+            <span>Vitaminas</span>
+        </button>
+        <button class="my-button">
+            <span>Minerales</span>
+        </button>
+       
+           
+        
+       
+      </div>
+    </header>
+
+    <!-- Aside -->
+    <div class="row">
+      <aside>
+        <div id="sidebar">
+          <ul>
+            <li><a href="#" class="active">Nacional</a></li>
+            <li><a href="#">Internacional</a></li>
+            <li><a href="#">Gourmet</a></li>
+            <li><a href="#">Vegetariana</a></li>
+            <li><a href="#">Vegana</a></li>
+          </ul>
+        </div>
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="img/image1.jpg" alt="" style="width: 100%" />
+            </div>
+            <div class="flip-card-back">
+                <h2>Reloj</h2>
+                <p></p>
+                <div class="flip-card-front">
+                    <div id="reloj"></div>
+                </div>                
+            </div>
+            <div class="flip-card-back">
+                <h2>Contador</h2>
+                <p></p>
+                <p id="clickCounter">Haz clic para contar</p>
+
+<script>
+  let clickCount = 0;
+  const clickCounterElement = document.getElementById('clickCounter');
+
+  function ContadorDeClicks() {
+    clickCount++;
+    clickCounterElement.textContent = `Clicks: ${clickCount}`;
+  }
+
+  clickCounterElement.addEventListener('click', ContadorDeClicks);
+</script>              
+            </div>
+            <div class="flip-card-back">
+                <h2>Cambiantes</h2>
+                <p></p>
+                <div class="flip-card-front">
+                    <button id="styleChangeButton">Cambiar Estilo</button>
+                        <div class="styledElement"></div>
+
+                        <script>
+                        const styleChangeButton = document.getElementById('styleChangeButton');
+                        const styledElement = document.querySelector('.styledElement');
+
+                        function CambiarEstilosDinamicos() {
+                            styledElement.style.backgroundColor = getRandomColor();
+                        }
+
+                        function getRandomColor() {
+                            const letters = '0123456789ABCDEF';
+                            let color = '#';
+                            for (let i = 0; i < 6; i++) {
+                            color += letters[Math.floor(Math.random() * 16)];
+                            }
+                            return color;
+                        }
+
+                        styleChangeButton.addEventListener('click', CambiarEstilosDinamicos);
+                        </script>
+                </div>                
+            </div>
+            <div class="flip-card-back">
+              <h2>Redes Sociales</h2>
+              <p></p>
+              <div class="flip-card-front">
+                <img src="img/megusta.jpg" alt="" style="width: 100%">
+                <img src="img/descargas.jpg" alt="" style="width: 100%" />
+              </div>
+              <img src="img/rdsociales.jpg" alt="" style="width: 100%">
+            </div>
+          </div>
+        </div>
+
+       
+      </aside>
+
+      <section class="main">
+        <article>
+          
+
+          <img alt="post 1" src="img/post1.jpg" />
+          <img alt="post 2" src="img/post2.jpg" />
+        </article>
+
+        <article>
+          <h2>
+            Nuevas Entradas | 
+          </h2>
+          <h5>Mabel Martinez, Nov 5, 2023</h5>
+          
+          <p>
+            Copos de avena: valores nutricionales, calorías y propiedades Los
+            copos de avena son un derivado natural de los granos de avena:
+            veamos sus valores nutricionales, propiedades beneficiosas y usos
+            más comunes. Los copos de avena son un producto alimenticio obtenido
+            por la presión mecánica de los…
+          </p>
+          <a href="#" class="read-more">Leer más</a>
+        </article>
+    <article>
+        <p></p>
+        <section id="photo-container">
+            <h2>
+                Nuevos Productos | Valores Nutricionales, Calorías y Propiedades
+              </h2>
+            <div class="column"> 
+                <img alt="post 2" src="img/post2.jpg" />
+                <h2>Columna 1</h2>
+                <p>Contenido de la columna 1</p><a href="#" class="read-more">Comprar</a><a href="#" class="read-more">Detalle</a></div>
+            <div class="column"> 
+                <img src="img/video1.jpg" alt="Video 1" />
+                <h2>Columna 2</h2>
+                <p>Contenido de la columna 2</p><a href="#" class="read-more">Comprar</a><a href="#" class="read-more">Detalle</a></div>
+            <div class="column"> 
+                <img src="img/video2.jpg" alt="Video 1" />
+                <h2>Columna 3</h2>
+                <p>Contenido de la columna 3</p><a href="#" class="read-more">Comprar</a><a href="#" class="read-more">Detalle</a></div>
+            <div class="column"> 
+                <img src="img/video3.jpg" alt="Video 1" />
+                <h2>Columna 4</h2>
+                <p>Contenido de la columna 4</p><a href="#" class="read-more">Comprar</a><a href="#" class="read-more">Detalle</a></div>
+                
+        </section>
+    </article>
+        </div>
+      </section>
+    </div>
+    <!-- /row -->
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; Jhovana Mabel Martinez Chavarria</p>
+    </footer>
+  </body>
+</html>
